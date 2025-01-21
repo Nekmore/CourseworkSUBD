@@ -1,0 +1,131 @@
+// Переключение на базу данных autoservice
+use autoservice;
+
+// Добавление записей в коллекцию masters (мастера)
+db.masters.insertMany([
+    {
+        "first_name": "Иван",
+        "last_name": "Петров",
+        "middle_name": "Сергеевич",
+        "grade": 5,
+        "specialization": "Механик"
+    },
+    {
+        "first_name": "Сергей",
+        "last_name": "Иванов",
+        "middle_name": "Александрович",
+        "grade": 4,
+        "specialization": "Электрик"
+    },
+    {
+        "first_name": "Андрей",
+        "last_name": "Сидоров",
+        "middle_name": "Игоревич",
+        "grade": 3,
+        "specialization": "Кузовщик"
+    },
+    {
+        "first_name": "Марина",
+        "last_name": "Кузнецова",
+        "middle_name": "Олеговна",
+        "grade": 5,
+        "specialization": "Двигателист"
+    },
+    {
+        "first_name": "Дмитрий",
+        "last_name": "Лебедев",
+        "middle_name": "Павлович",
+        "grade": 4,
+        "specialization": "Трансмиссия"
+    }
+]);
+
+// Добавление записей в коллекцию cars (автомобили)
+db.cars.insertMany([
+    {
+        "brand": "Toyota",
+        "year": 2015,
+        "registration_number": "A123BC777"
+    },
+    {
+        "brand": "BMW",
+        "year": 2018,
+        "registration_number": "B456DE888"
+    },
+    {
+        "brand": "Mercedes",
+        "year": 2020,
+        "registration_number": "C789FG999"
+    },
+    {
+        "brand": "Audi",
+        "year": 2017,
+        "registration_number": "D321JK555"
+    },
+    {
+        "brand": "Ford",
+        "year": 2019,
+        "registration_number": "E654LM444"
+    }
+]);
+
+// Добавление записей в коллекцию works (выполненные работы)
+db.works.insertMany([
+    {
+        "car_id": ObjectId('678e659f0283f3094c544cb7'),
+        "master_id": ObjectId('678e659d0283f3094c544cb2'),
+        "hours_worked": 5,
+        "hourly_rate": 1500,
+        "problem_description": "Замена тормозных колодок",
+        "work_description": "Установлены новые тормозные колодки, проверена система тормозов"
+    },
+    {
+        "car_id": ObjectId('678e659f0283f3094c544cb8'),
+        "master_id": ObjectId('678e659d0283f3094c544cb3'),
+        "hours_worked": 3,
+        "hourly_rate": 1800,
+        "problem_description": "Неисправна электропроводка",
+        "work_description": "Заменена поврежденная проводка, выполнена проверка электрооборудования"
+    },
+    {
+        "car_id": ObjectId('678e659f0283f3094c544cb9'),
+        "master_id": ObjectId('678e659d0283f3094c544cb4'),
+        "hours_worked": 7,
+        "hourly_rate": 2000,
+        "problem_description": "Повреждение кузова",
+        "work_description": "Выполнено выравнивание вмятин, окрашивание поврежденного участка"
+    },
+    {
+        "car_id": ObjectId('678e659f0283f3094c544cba'),
+        "master_id": ObjectId('678e659d0283f3094c544cb5'),
+        "hours_worked": 4,
+        "hourly_rate": 2500,
+        "problem_description": "Неисправность двигателя",
+        "work_description": "Проведена диагностика двигателя, замена свечей зажигания"
+    },
+    {
+        "car_id": ObjectId('678e659f0283f3094c544cbb'),
+        "master_id": ObjectId('678e659d0283f3094c544cb6'),
+        "hours_worked": 6,
+        "hourly_rate": 1700,
+        "problem_description": "Проблемы с коробкой передач",
+        "work_description": "Ремонт коробки передач, замена масла"
+    },
+    {
+        "car_id": ObjectId('678e659f0283f3094c544cb7'),
+        "master_id": ObjectId('678e659d0283f3094c544cb3'),
+        "hours_worked": 2,
+        "hourly_rate": 1800,
+        "problem_description": "Не работает фара",
+        "work_description": "Замена лампы, проверка электроцепи"
+    },
+    {
+        "car_id": ObjectId('678e659f0283f3094c544cb9'),
+        "master_id": ObjectId('678e659d0283f3094c544cb2'),
+        "hours_worked": 3,
+        "hourly_rate": 1500,
+        "problem_description": "Шум в подвеске",
+        "work_description": "Замена амортизаторов"
+    }
+]);
+    
