@@ -94,13 +94,7 @@ def update_work(work_id, car_registration_number, master_id, problem_description
         "problem_description": problem_description,
         "work_description": work_description
     }})
-#    entry_work_id.get(),
- #       entry_work_car.get(),
- #       entry_work_master.get(),
- #       entry_work_problem.get(),
- #       entry_work_description.get(),
-#        entry_work_hours.get(),
-  #      entry_work_rate.get()
+
     messagebox.showinfo("Успех", "Данные работы обновлены.")
 
 def delete_work(work_id):
@@ -194,7 +188,7 @@ def update_works_view():
         car = db.cars.find_one({"_id": work["car_id"]})
         master = db.masters.find_one({"_id": work["master_id"]})
         tree_works.insert("", "end", values=(work["_id"], car["registration_number"] if car else "Не найдено", master["first_name"] + " " + master["last_name"] if master else "Не найдено", work["problem_description"], work["work_description"], work["hours_worked"], work["hourly_rate"], work["hours_worked"] * work["hourly_rate"]))
-#
+
 
 # Создание графического интерфейса
 root = tk.Tk()
